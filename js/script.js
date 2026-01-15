@@ -664,8 +664,8 @@ document.querySelectorAll(".stat-card").forEach((card) => {
 const featureItems = document.querySelectorAll(".feature-item");
 
 const observerOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px",
+  threshold: 0.15,
+  rootMargin: "0px 0px -80px 0px",
 };
 
 const featureObserver = new IntersectionObserver((entries) => {
