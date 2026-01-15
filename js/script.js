@@ -660,26 +660,23 @@ const statObserver = new IntersectionObserver(
 document.querySelectorAll(".stat-card").forEach((card) => {
   statObserver.observe(card);
 });
+// Scroll animation for features
+const featureItems = document.querySelectorAll(".feature-item");
 
-// ========================================
-// FEATURES SCROLL ANIMATION
-// ========================================
-const featureObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-    rootMargin: "0px 0px -100px 0px",
-  }
-);
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px",
+};
 
-// Observe all feature items
-document.querySelectorAll(".feature-item").forEach((item) => {
+const featureObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animated");
+    }
+  });
+}, observerOptions);
+
+featureItems.forEach((item) => {
   featureObserver.observe(item);
 });
 
