@@ -2291,9 +2291,9 @@ header.scrolled .logo-img {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #fff;
   padding: 1rem 1.8rem;
   border-radius: 0; /* Remove border radius */
@@ -2324,13 +2324,13 @@ header.scrolled .logo-img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(201, 169, 97, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* optional glass edge */
   width: 60px;
   height: 60px;
-  border-radius: 0; /* Square instead of circle */
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2350,8 +2350,8 @@ header.scrolled .logo-img {
 }
 
 .carousel-arrow:hover {
-  background: #c9a961;
-  transform: translateY(-50%) scale(1.15);
+  background: rgba(201, 169, 97, 0.18);
+  transform: translateY(-50%) scale(1.05);
   box-shadow: 0 15px 40px rgba(201, 169, 97, 0.5);
 }
 
@@ -2425,8 +2425,8 @@ header.scrolled .logo-img {
 .thumbnail-item.active .thumbnail-overlay {
   background: linear-gradient(
     135deg,
-    rgba(201, 169, 97, 0.8),
-    rgba(176, 143, 74, 0.8)
+    rgba(201, 169, 97, 0.3),
+    rgba(176, 143, 74, 0.3)
   );
 }
 
@@ -2444,8 +2444,8 @@ header.scrolled .logo-img {
 .thumbnail-item:hover .thumbnail-overlay {
   background: linear-gradient(
     135deg,
-    rgba(201, 169, 97, 0.7),
-    rgba(176, 143, 74, 0.7)
+    rgba(201, 169, 97, 0.3),
+    rgba(176, 143, 74, 0.3)
   );
 }
 
@@ -2719,6 +2719,7 @@ header.scrolled .logo-img {
   gap: 0; /* No gap - dividers instead */
   position: relative;
   z-index: 1;
+  margin-top: -2rem;
 }
 
 /* Service Card - No Card, No Border Radius */
@@ -3257,6 +3258,10 @@ header.scrolled .logo-img {
   .cta-button-large {
     padding: 1.2rem 1.8rem;
     font-size: 0.95rem;
+  }
+
+  .service-card {
+    padding: 3rem 0;
   }
 }
 
@@ -4509,6 +4514,25 @@ footer::after {
 }
 
 @media (max-width: 480px) {
+  .footer-column.order-socials {
+    order: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-column.order-links {
+    order: 3;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-column.order-contact {
+    order: 2;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-title.socials {
+    display: none;
+  }
+
   footer {
     padding: 2.5rem 0 0;
   }
@@ -4547,6 +4571,10 @@ footer::after {
   .copyright,
   .created-by {
     font-size: 0.85rem;
+  }
+
+  .social-description {
+    display: none;
   }
 }
 
@@ -4755,6 +4783,10 @@ footer::after {
     font-size: 1.5rem;
   }
 
+  .hero {
+    padding-bottom: 150px;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -4898,7 +4930,7 @@ footer::after {
   height: 100%;
   object-fit: cover;
   display: block;
-  aspect-ratio: 4/3; /* Consistent aspect ratio for all images */
+  aspect-ratio: 16/10; /* Consistent aspect ratio for all images */
   transition: transform 0.6s ease;
 }
 
